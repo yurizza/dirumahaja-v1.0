@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout_item_list_kelas">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:cardBackgroundColor="#FAFAFA"
+        app:cardElevation="8dp"
+        android:layout_margin="10dp"
+        android:id="@+id/cv_kelas">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/iv_kelas"
+                android:layout_width="158dp"
+                android:layout_height="152dp"
+                android:padding="15dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher_background"
+                ></ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+            <TextView
+                android:id="@+id/tv_nama_kelas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Android 5.0"
+                android:gravity="center"
+                ></TextView>
+            <TextView
+                android:id="@+id/tv_sub_kelas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="subkelas"
+                android:gravity="center"
+                ></TextView>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Pengajar : "></TextView>
+            <TextView
+                android:id="@+id/tv_pengajar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="pengajar"
+                android:gravity="center"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

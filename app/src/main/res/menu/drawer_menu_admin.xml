@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home_admin"
+            android:icon="@drawable/home_icon"
+            android:title="Home"/>
+
+        <item android:id="@+id/nav_profil_admin"
+            android:icon="@drawable/profil"
+            android:title="Profil"/>
+
+        <item android:id="@+id/nav_buat_tugas"
+            android:icon="@drawable/obrolan"
+            android:title="Buat Tugas"/>
+
+        <item android:id="@+id/nav_cek_tugas"
+            android:icon="@drawable/pr"
+            android:title="Cek Tugas"/>
+
+        <item android:id="@+id/signout_admin"
+            android:icon="@drawable/out"
+            android:title="Sign Out"/>
+    </group>
+</menu>

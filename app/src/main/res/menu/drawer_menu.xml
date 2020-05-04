@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home"
+            android:icon="@drawable/home_icon"
+            android:title="Home"/>
+
+        <item android:id="@+id/nav_profil"
+            android:icon="@drawable/profil"
+            android:title="Profil"/>
+
+        <item android:id="@+id/nav_obrolan"
+            android:icon="@drawable/obrolan"
+            android:title="Obrolan Online"/>
+
+        <item android:id="@+id/nav_pr"
+            android:icon="@drawable/pr"
+            android:title="Pekerjaan Rumah"/>
+
+        <item android:id="@+id/nav_berita"
+            android:icon="@drawable/berita"
+            android:title="Berita Acara"/>
+
+        <item android:id="@+id/nav_kelas"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="Kelas" />
+
+        <item android:id="@+id/signout"
+            android:icon="@drawable/out"
+            android:title="Sign Out"/>
+    </group>
+
+</menu>
