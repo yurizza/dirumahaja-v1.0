@@ -18,5 +18,4 @@ public class LoginService {
     public void doLogin(String email, String password, Callback callback) {
         loginInterface.login(email, password).enqueue(callback);
     }
-
 }

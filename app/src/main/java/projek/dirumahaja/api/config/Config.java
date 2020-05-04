@@ -7,5 +7,6 @@ public class Config {
     public static final String API_LOGIN = API_URL + "/login.php";
     public static final String API_REGISTER = API_URL + "/register.php";
     public static final String API_KELAS = API_URL+"/apikelas.php";
+    public static final String  API_BUATnGABUNG_KELAS = API_URL+"/kelas.php";
 
 }

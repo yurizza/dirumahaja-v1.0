@@ -13,7 +13,7 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".KelasDetailActivity"></activity>
+        <activity android:name=".KelasDetailActivity" />
         <activity android:name=".AdminActivity" />
         <activity
             android:name=".Main2Activity"

@@ -6,21 +6,51 @@
     tools:context=".KelasFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <Button
-        android:id="@+id/btn_buat_kelas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Buat kelas"></Button>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_buat_kelas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buat"
+            ></Button>
+        <EditText
+            android:id="@+id/et_kode_kelas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="masukan kode..."
+            ></EditText>
+        <Button
+            android:id="@+id/btn_gabung_kelas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gabung"
+            ></Button>
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="30dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_list_kelas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@layout/item_recyclerview_kelas"
             ></androidx.recyclerview.widget.RecyclerView>
+        </ScrollView>
+    </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>
