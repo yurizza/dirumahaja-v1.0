@@ -13,6 +13,7 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".BuatKelasActivity"></activity>
         <activity android:name=".KelasDetailActivity" />
         <activity android:name=".AdminActivity" />
         <activity

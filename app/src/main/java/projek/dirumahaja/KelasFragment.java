@@ -77,6 +77,7 @@ public class KelasFragment extends Fragment {
         rvKelas.setAdapter(kelasAdapter);
 
         etIdGabung = view.findViewById(R.id.et_kode_kelas);
+        btnBuatKelas = view.findViewById(R.id.btn_buat_kelas);
         btnGabungKelas = (Button) view.findViewById(R.id.btn_gabung_kelas);
         btnGabungKelas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +85,20 @@ public class KelasFragment extends Fragment {
                 gabungAct();
             }
         });
+        btnBuatKelas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buatAct();
+            }
+        });
+
     }
+
+    private void buatAct() {
+        Intent intent = new Intent(getContext(),BuatKelasActivity.class);
+        startActivity(intent);
+    }
+
     private Observer<ArrayList<KelasItem>> getKelas = new Observer<ArrayList<KelasItem>>() {
         @Override
         public void onChanged(ArrayList<KelasItem> kelasItems) {

@@ -62,7 +62,7 @@ public class Main2Activity extends AppCompatActivity  implements NavigationView.
         firstFragmentDisplay(R.id.nav_home);
 }
 
-    private void firstFragmentDisplay(int itemId) {
+    public void firstFragmentDisplay(int itemId) {
         fragment = null;
 
         switch (itemId) {
