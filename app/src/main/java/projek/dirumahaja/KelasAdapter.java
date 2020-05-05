@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import projek.dirumahaja.model.User;
 import projek.dirumahaja.model.kelas.KelasItem;
 import projek.dirumahaja.util.PrefUtil;
+import projek.dirumahaja.viewModel.KelasViewModel;
 
 public class KelasAdapter extends RecyclerView.Adapter<KelasAdapter.ViewHolder> {
    private ArrayList<KelasItem> kelasItems=new ArrayList<>();
@@ -76,6 +77,7 @@ public class KelasAdapter extends RecyclerView.Adapter<KelasAdapter.ViewHolder> 
                     intent.putExtra("namaKelas",kelasItems.get(getAdapterPosition()).getNamaKelas());
                     intent.putExtra("subKelas",kelasItems.get(getAdapterPosition()).getSubKelas());
                     intent.putExtra("kodeKelas",kelasItems.get(getAdapterPosition()).getKodeKelas());
+                    intent.putExtra("pengajar",kelasItems.get(getAdapterPosition()).getPengajar());
                     v.getContext().startActivity(intent);
                 }
             });

@@ -35,6 +35,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="kode"></TextView>
+                <ImageButton
+                    android:id="@+id/ib_share_kode_kelas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_share_black_24dp"
+                    style="@style/buttonstyle3"
+                    ></ImageButton>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

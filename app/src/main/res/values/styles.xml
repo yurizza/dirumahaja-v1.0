@@ -15,5 +15,9 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="buttonstyle3" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/orange</item>
+        <item name="colorButtonNormal">@color/green</item>
+    </style>
 
 </resources>

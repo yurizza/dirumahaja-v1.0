@@ -5,4 +5,6 @@
     <color name="colorAccent">#00c797</color>
     <color name="warna">#00c797</color>
     <color name="putih">#ffffff</color>
+    <color name="orange">#FFA500 </color>
+    <color name="green">#00FF00</color>
 </resources>

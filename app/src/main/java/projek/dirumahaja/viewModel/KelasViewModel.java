@@ -34,6 +34,7 @@ public class KelasViewModel extends ViewModel{
             public void onResponse(Call<KelasResponse> call, Response<KelasResponse> response) {
                 KelasResponse kelasResponse = response.body();
                 if (kelasResponse!=null && !kelasResponse.isError()){
+
                     ArrayList<KelasItem> kelasItem = kelasResponse.getKelas();
                     listMutableLiveData.postValue(kelasItem);
                 }
