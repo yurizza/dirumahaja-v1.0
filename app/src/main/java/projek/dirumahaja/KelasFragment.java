@@ -133,9 +133,11 @@ public class KelasFragment extends Fragment {
                 if(gabungResponse != null) {
                     if(!gabungResponse.isError()) {
                         Toast.makeText(getContext(), gabungResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                        //refresh fragment
                         FragmentTransaction t = getActivity().getSupportFragmentManager().beginTransaction();
                         t.setReorderingAllowed(false);
                         t.detach(KelasFragment.this).attach(KelasFragment.this).commitAllowingStateLoss();
+                        etIdGabung.setText("");
                     }
                     Toast.makeText(getContext(), gabungResponse.getMessage(), Toast.LENGTH_SHORT).show();
                 }

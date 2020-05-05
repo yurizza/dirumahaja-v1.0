@@ -12,6 +12,9 @@ public class KelasItem{
 	@SerializedName("idKelas")
 	private int idKelas;
 
+	@SerializedName("kodeKelas")
+	private String kodeKelas;
+
 	@SerializedName("namaKelas")
 	private String namaKelas;
 
@@ -35,6 +38,14 @@ public class KelasItem{
 
 	public void setIdKelas(int idKelas) {
 		this.idKelas = idKelas;
+	}
+
+	public String getKodeKelas() {
+		return kodeKelas;
+	}
+
+	public void setKodeKelas(String kodeKelas) {
+		this.kodeKelas = kodeKelas;
 	}
 
 	public void setNamaKelas(String namaKelas){
@@ -68,7 +79,8 @@ public class KelasItem{
 			"anggotaKelas = '" + anggotaKelas + '\'' + 
 			",namaKelas = '" + namaKelas + '\'' + 
 			",subKelas = '" + subKelas + '\'' + 
-			",pengajar = '" + pengajar + '\'' + 
+			",pengajar = '" + pengajar + '\'' +
+			",kodeKelas = '"+kodeKelas+'\''+
 			"}";
 		}
 }

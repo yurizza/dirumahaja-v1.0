@@ -38,6 +38,7 @@
                 android:layout_marginTop="50dp">
 
                 <EditText
+                    android:inputType="textEmailAddress"
                     android:id="@+id/et_email"
                     android:layout_width="250dp"
                     android:layout_height="45dp"
@@ -61,6 +62,7 @@
                     android:layout_gravity="center"
                     android:drawableLeft="@drawable/key"
                     android:hint="Password"
+                    android:inputType="textPassword"
                     android:fontFamily="@font/averia_libre_light"
                     android:textColorHint="@color/cardview_dark_background" />
 

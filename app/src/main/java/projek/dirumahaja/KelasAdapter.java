@@ -75,7 +75,7 @@ public class KelasAdapter extends RecyclerView.Adapter<KelasAdapter.ViewHolder> 
                     intent.putExtra("idKelas",kelasItems.get(getAdapterPosition()).getIdKelas());
                     intent.putExtra("namaKelas",kelasItems.get(getAdapterPosition()).getNamaKelas());
                     intent.putExtra("subKelas",kelasItems.get(getAdapterPosition()).getSubKelas());
-
+                    intent.putExtra("kodeKelas",kelasItems.get(getAdapterPosition()).getKodeKelas());
                     v.getContext().startActivity(intent);
                 }
             });

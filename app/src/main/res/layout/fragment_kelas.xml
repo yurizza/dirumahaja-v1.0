@@ -24,10 +24,11 @@
             android:text="Buat"
             ></Button>
         <EditText
+            android:gravity="center"
             android:id="@+id/et_kode_kelas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="masukan kode..."
+            android:hint="masukan kode kelas"
             ></EditText>
         <Button
             android:id="@+id/btn_gabung_kelas"
