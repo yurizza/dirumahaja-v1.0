@@ -3,6 +3,7 @@ package projek.dirumahaja;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -24,11 +25,13 @@ public class BuatKelasActivity extends AppCompatActivity {
     private BuatKelasResponse buatKelasResponse;
     private EditText etNamaKelas,etSubKelas;
     private Button btnBuatKelas;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buat_kelas);
-
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("OnCreating..");
         etNamaKelas = findViewById(R.id.et_nama_kelas);
         etSubKelas = findViewById(R.id.et_sub_kelas);
         btnBuatKelas = findViewById(R.id.btn_buat_kelas);
@@ -53,7 +56,7 @@ public class BuatKelasActivity extends AppCompatActivity {
             etNamaKelas.setError("Nama Kelas Kosong!");
             return;
         }
-
+        progressDialog.show();
         buatKelasService = new BuatKelasService(this);
         buatKelasService.setKelasService(action, strNamaKelas, strSubKelas, email, new Callback() {
             @Override
@@ -63,6 +66,7 @@ public class BuatKelasActivity extends AppCompatActivity {
                     if (!buatKelasResponse.isError()){
                         Toast.makeText(BuatKelasActivity.this, buatKelasResponse.getMessage(), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(BuatKelasActivity.this,KelasDetailActivity.class);
+                        intent.putExtra("pengajar",email);
                         intent.putExtra("email",email);
                         intent.putExtra("namaKelas", strNamaKelas);
                         intent.putExtra("subKelas",strSubKelas);
@@ -72,10 +76,12 @@ public class BuatKelasActivity extends AppCompatActivity {
                     }
                     Toast.makeText(BuatKelasActivity.this, buatKelasResponse.getMessage(), Toast.LENGTH_SHORT).show();
                 }
+                progressDialog.dismiss();
             }
 
             @Override
             public void onFailure(Call call, Throwable t) {
+                progressDialog.dismiss();
                 Toast.makeText(BuatKelasActivity.this, "An error occurred!", Toast.LENGTH_SHORT).show();
             }
         });

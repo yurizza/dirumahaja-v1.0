@@ -1,4 +1,5 @@
 package projek.dirumahaja.api.config;
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 import android.content.Context;
 
@@ -9,6 +10,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import projek.dirumahaja.BuildConfig;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
 public class RetrofitBuilder {
 
         public static Retrofit builder(Context context) {

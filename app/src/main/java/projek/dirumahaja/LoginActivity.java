@@ -1,5 +1,6 @@
 package projek.dirumahaja;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private TextView tvDaftar;
     private LoginService loginService;
+    ProgressDialog progressDialog;
 
     public static void start(Context context) {
         Intent intent = new Intent(context, LoginActivity.class);
@@ -34,7 +36,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Login...");
         if(isSessionLogin()) {
             Main2Activity.start(this);
             LoginActivity.this.finish();
@@ -74,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
+        progressDialog.show();
         loginService = new LoginService(this);
         loginService.doLogin(email, password, new Callback() {
             @Override
@@ -90,12 +94,15 @@ public class LoginActivity extends AppCompatActivity {
 
                     Toast.makeText(LoginActivity.this, user.getMessage(), Toast.LENGTH_SHORT).show();
                 }
+                progressDialog.dismiss();
             }
 
             @Override
             public void onFailure(retrofit2.Call call, Throwable t) {
                 Toast.makeText(LoginActivity.this, "An error occurred!", Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }
+
         });
     }
 

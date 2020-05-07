@@ -4,6 +4,7 @@ import projek.dirumahaja.model.BaseResponse;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,7 +32,7 @@ import retrofit2.Callback;
 public class DaftarActivity extends AppCompatActivity {
     EditText etNama,etEmail,etPassword,etNomorMahasiswa,etInstansi;
     Button btnDaftar;
-
+    ProgressDialog progressDialog;
     private RegisterService registerService;
 
     public static void start(Context context) {
@@ -42,7 +43,8 @@ public class DaftarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar);
-
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Onprogess...");
         etNama = (EditText) findViewById(R.id.et_daf_nama);
         etEmail = (EditText) findViewById(R.id.et_daf_email);
         etPassword = (EditText) findViewById(R.id.et_daf_password);
@@ -78,12 +80,14 @@ public class DaftarActivity extends AppCompatActivity {
             etPassword.setError("Password cannot be empty !");
             return;
         }
-
+    progressDialog.show();
         registerService = new RegisterService(this);
         registerService.doRegister(strNama, strEmail,strPassword, strNomorMahasiswa,strInstansi, new Callback() {
             @Override
             public void onFailure(Call call, Throwable t) {
+                progressDialog.dismiss();
                 Toast.makeText(DaftarActivity.this, "An error occurred!", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -98,6 +102,7 @@ public class DaftarActivity extends AppCompatActivity {
                     }
                     Toast.makeText(DaftarActivity.this, baseResponse.getMessage(), Toast.LENGTH_SHORT).show();
                 }
+                progressDialog.dismiss();
             }
         });
 

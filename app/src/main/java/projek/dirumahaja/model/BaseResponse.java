@@ -1,8 +1,12 @@
 package projek.dirumahaja.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class BaseResponse {
 
+    @SerializedName("error")
     private boolean error;
+    @SerializedName("message")
     private String message;
 
     public BaseResponse() {
@@ -24,4 +28,12 @@ public class BaseResponse {
         this.message = message;
     }
 
+    @Override
+    public String toString(){
+        return
+                "BaseResponse{" +
+                        "error = '" + error + '\'' +
+                        ",message = '" + message + '\'' +
+                        "}";
+    }
 }

@@ -1,13 +1,20 @@
 package projek.dirumahaja.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 public class UserData {
 
+    @SerializedName("nama")
     private String nama;
+    @SerializedName("email")
     private String email;
+    @SerializedName("password")
     private String password;
+    @SerializedName("nomorMahasiswa")
     private String nomorMahasiswa;
+    @SerializedName("instansi")
     private String instansi;
 
     public UserData() {
@@ -51,5 +58,16 @@ public class UserData {
 
     public void setInstansi(String instansi) {
         this.instansi = instansi;
+    }
+    @Override
+    public String toString(){
+        return
+                "Data{" +
+                        "nama = '" + nama + '\'' +
+                        ",email = '" + email + '\'' +
+                        ",password = '" + password + '\'' +
+                        "nomorMahasiswa = '" + nomorMahasiswa + '\'' +
+                        "instansi = '" + instansi + '\'' +
+                        "}";
     }
 }

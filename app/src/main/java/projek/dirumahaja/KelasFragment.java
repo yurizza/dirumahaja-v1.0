@@ -1,6 +1,7 @@
 package projek.dirumahaja;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,7 +46,7 @@ public class KelasFragment extends Fragment {
     private KelasViewModel kelasViewModel;
     private Button btnBuatKelas,btnGabungKelas;
     private EditText etIdGabung;
-
+    ProgressDialog progressDialog;
     GabungKelasService gabungKelasService;
     public KelasFragment() {
         // Required empty public constructor
@@ -62,7 +63,8 @@ public class KelasFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Kelas");
-
+        progressDialog = new ProgressDialog(view.getContext());
+        progressDialog.setMessage("Loading...");
         User user = PrefUtil.getUser(view.getContext(), PrefUtil.USER_SESSION);
 
         kelasAdapter = new KelasAdapter(getContext());
@@ -119,11 +121,13 @@ public class KelasFragment extends Fragment {
             return;
         }
 
+        progressDialog.show();
         gabungKelasService = new GabungKelasService(getContext());
         gabungKelasService.setGabungKelas(action,strIdgabung,email, new Callback() {
             @Override
             public void onFailure(Call call, Throwable t) {
                 Toast.makeText(getContext(), "An error occurred!", Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }
 
             @Override
@@ -141,6 +145,7 @@ public class KelasFragment extends Fragment {
                     }
                     Toast.makeText(getContext(), gabungResponse.getMessage(), Toast.LENGTH_SHORT).show();
                 }
+            progressDialog.dismiss();
             }
         });
 
